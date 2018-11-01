@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92D7DC92C2F3C36523F4C21B /* Pods_ClassyFlower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA75CA584E62CB85C1431A57 /* Pods_ClassyFlower.framework */; };
 		EBFD9F7021859F9700D56CC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFD9F6F21859F9700D56CC9 /* AppDelegate.swift */; };
 		EBFD9F7221859F9700D56CC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFD9F7121859F9700D56CC9 /* ViewController.swift */; };
 		EBFD9F7521859F9700D56CC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBFD9F7321859F9700D56CC9 /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9212017362EBE5E53533DFE0 /* Pods-ClassyFlower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassyFlower.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClassyFlower/Pods-ClassyFlower.release.xcconfig"; sourceTree = "<group>"; };
+		B65C1BE3B05CA20FC61E2678 /* Pods-ClassyFlower.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassyFlower.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClassyFlower/Pods-ClassyFlower.debug.xcconfig"; sourceTree = "<group>"; };
+		CA75CA584E62CB85C1431A57 /* Pods_ClassyFlower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClassyFlower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFD9F6C21859F9700D56CC9 /* ClassyFlower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassyFlower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFD9F6F21859F9700D56CC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBFD9F7121859F9700D56CC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D7DC92C2F3C36523F4C21B /* Pods_ClassyFlower.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3344CD9866F4855875F16EE0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B65C1BE3B05CA20FC61E2678 /* Pods-ClassyFlower.debug.xcconfig */,
+				9212017362EBE5E53533DFE0 /* Pods-ClassyFlower.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB1B7D3B0D226A0884B2E459 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA75CA584E62CB85C1431A57 /* Pods_ClassyFlower.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EBFD9F6321859F9700D56CC9 = {
 			isa = PBXGroup;
 			children = (
 				EBFD9F6E21859F9700D56CC9 /* ClassyFlower */,
 				EBFD9F6D21859F9700D56CC9 /* Products */,
+				3344CD9866F4855875F16EE0 /* Pods */,
+				BB1B7D3B0D226A0884B2E459 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBFD9F7E21859F9B00D56CC9 /* Build configuration list for PBXNativeTarget "ClassyFlower" */;
 			buildPhases = (
+				4CFB935DB0BF1D870A61D0F9 /* [CP] Check Pods Manifest.lock */,
 				EBFD9F6821859F9700D56CC9 /* Sources */,
 				EBFD9F6921859F9700D56CC9 /* Frameworks */,
 				EBFD9F6A21859F9700D56CC9 /* Resources */,
+				9456CE67A95B8F1F672CC8BE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4CFB935DB0BF1D870A61D0F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ClassyFlower-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9456CE67A95B8F1F672CC8BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ClassyFlower/Pods-ClassyFlower-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClassyFlower/Pods-ClassyFlower-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EBFD9F6821859F9700D56CC9 /* Sources */ = {
@@ -284,6 +361,7 @@
 		};
 		EBFD9F7F21859F9B00D56CC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B65C1BE3B05CA20FC61E2678 /* Pods-ClassyFlower.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +380,7 @@
 		};
 		EBFD9F8021859F9B00D56CC9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9212017362EBE5E53533DFE0 /* Pods-ClassyFlower.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

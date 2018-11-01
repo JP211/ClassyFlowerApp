@@ -1,0 +1,6 @@
+framework module Pods_ClassyFlower {
+  umbrella header "Pods-ClassyFlower-umbrella.h"
+
+  export *
+  module * { export * }
+}
